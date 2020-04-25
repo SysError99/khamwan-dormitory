@@ -1,0 +1,109 @@
+<html>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title>ข้อมูลผู้เช่า</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="body.css">
+<!--navbar-->
+<script src="include-html.js"></script>
+<script src="navbar.js""></script>
+<p include-html="navbar.html"></p>
+<script>includeHTML();</script>
+<!--navbar-->
+<div class="header"><h1 id="title">ข้อมูลห้องพัก</h1></div>
+<form action="scr_room.php?edit" id="formedit" name="formRegister" method="post">
+    <p align="center"> ข้อมูลห้องพัก </p>
+    <table align="center">
+        <tr>
+            <td>หมายเลขห้อง:</td><td><input type="text" id="id" name="id"><br></td>
+        </tr>
+        <tr>
+            <td>ประเภทการเช่า</td>
+            <td><input type="radio" name="type" value="รายเดือน">
+                <span class="checkmark"></span>รายเดือน
+                <input type="radio" name="type" value="รายเทอม">
+                <span class="checkmark"></span>รายเทอม</td>
+        </tr>
+        <tr>
+            <td>เจ้าของห้อง:</td><td><input type="text" id="owner" name="owner"><br></td>
+        </tr>
+        <tr>
+            <td>ที่อยู่เจ้าของห้อง:</td><td><input type="text" id="addr" name="addr"><br></td>
+        </tr>
+        <tr>
+            <td>โทรศัพท์เจ้าของห้อง:</td><td><input type="text" id="phone" name="phone"><br></td>
+        </tr>
+        <tr>
+            <td>กำหนดรหัสผ่านเข้าถึงระบบ:</td><td><input type="password" id="pwd"  name="pwd"><br></td>
+        </tr>
+        <tr>
+            <td> </td><td> </td>
+        </tr>
+        <tr>
+            <td></td><td><input type="submit" value="บันทึกข้อมูล"></td>
+        </tr>
+    </table>
+</form>
+<div id='manager' class="container">
+    <p align="center">จัดการห้องพัก</p>
+    <p align=center>
+    <button class="button-small button-red" onclick="cancel()">ยกเลิกสัญญาเช่า</button>
+    </p>
+    <p align="center">
+    <button class="button-small button-red" onclick="del()">ลบห้องนี้ออกไปจากระบบ</button>
+    </p>
+</div>
+<div class="container>">
+    <button class="button button-red" onclick="back()">ย้อนกลับ</button>
+</div>
+<script>
+warning = '\n\nระวัง! คุณไม่สามารถย้อนกลับการกระทำนี้ได้!\n\n';
+urlParams = new URLSearchParams(window.location.search)
+//pull parameters
+if(urlParams.get('id')!=null){
+    document.getElementById('title').innerHTML = "ข้อมูลห้องพัก "+urlParams.get('id')
+    document.getElementById('id').value = urlParams.get('id')
+    if(urlParams.get('type')!=null){
+        types = document.getElementsByName('type')
+        types.forEach((type) =>{
+            if(type.value == urlParams.get('type')){
+                type.checked=true
+            }
+        })
+    }
+    if(urlParams.get('owner')!=null){document.getElementById('owner').value = urlParams.get('owner')}
+    if(urlParams.get('addr')!=null){document.getElementById('addr').value = urlParams.get('addr')}
+    if(urlParams.get('phone')!=null){document.getElementById('phone').value = urlParams.get('phone')}
+}
+else{
+    //hide tools, if no parameters
+    document.getElementById('manager').style.display='none'
+    //set to add mode
+    document.getElementById('formedit').action = 'scr_room.php?add'
+}
+function back(){
+    window.open('room_list.php','_self')
+}
+function del(){
+    if(confirm('คุณต้องการลบห้องพัก '+urlParams.get('id')+' ออกจากระบบใช่หรือไม่'+warning)){
+        window.open('scr_room.php?delete&id='+urlParams.get('id'),'_self')
+    }
+}
+function cancel(){
+    if(urlParams.get('owner')!=null){
+        if(confirm('คุณต้องการยกเลิกสัญญาเช่าของ '+urlParams.get('owner')+' อย่างถาวรใช่หรือไม่?'+warning)){
+            window.open('scr_room.php?cancel&id='+urlParams.get('id'),'_self')
+        }
+    }
+    else{
+        alert('ไม่มีผู้เช่า!');
+    }
+}
+</script>
+<!--auth.js-->
+<p id="page" type="admin"></p>
+<script src="scr_auth.js"></script>
+<!--auth.js-->
+</body>
+</html>

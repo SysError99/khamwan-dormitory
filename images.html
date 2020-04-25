@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ภาพหอพัก</title>
+</head>
+<body>
+    <link rel="stylesheet" href="body.css">
+    <link rel="stylesheet" href="bodyhome.css">
+    <!--navbar-->
+    <script src="include-html.js"></script>
+    <script src="navbar.js""></script>
+    <p include-html="navbar.html"></p>
+    <script>includeHTML();</script>
+    <!--navbar-->
+    <!-- Simulate a smartphone / tablet -->
+    <div class="mobile-container">
+        <div style="padding:16px">
+    <!-- END -->        
+    
+    <!--header-->
+        <img src="header_images.png" style="width:100%">
+    <!-- END -->
+     
+
+    <!--ส่วนของรูปภาพ-->
+    <div class="container" align ="center">
+        <div class="contentbox">
+            <div align ="center" >
+                <a href="pic0.jpg"><img src="pic0.jpg" style="width:100%"></a>
+            </div>
+            <div align ="center">
+                <a href="pic1.jpg"><img src="pic1.jpg" style="width:100%"></a>
+            </div>
+        </div>
+    </div>
+    <!-- END -->
+        
+    <!-- ย้อนกลับ Button -->
+    <div class="pricing-block-button">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <div class="w3-container">
+                <p><button class="w3-button w3-green w3-round" onclick="link('index.html')">ย้อนกลับ</button></p><!--ใส่ลิ้งตรงนี้-->
+            </div>
+     </div>
+    <!-- END -->
+        
+    <!-- footer -->
+    <footer>
+            <p align ="center" style="font-size: medium" >copyright ©2020 Keng Kajorn</p>
+     </footer>   
+     <!-- END -->
+</body>
+<script>
+function link(url){
+    window.open(url,'_self')
+}
+</script>
+</html>

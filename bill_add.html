@@ -1,0 +1,67 @@
+<html>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title>ข้อมูลผู้เช่า</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="body.css">
+<!--navbar-->
+<script src="include-html.js"></script>
+<script src="navbar.js""></script>
+<p include-html="navbar.html"></p>
+<script>includeHTML();</script>
+<!--navbar-->
+<div class="header"><h1 id="title">สร้างบิลใหม่</h1></div>
+<form action="scr_bill.php?add" id="formbill" name="formbill" method="post">
+    <p align="center"> รายละเอียดบิล </p>
+    <table align="center">
+        <tr>
+            <td>หมายเลขห้อง:</td><td><input type="text" id="id" name="id"><br></td>
+        </tr>
+        <tr>
+            <td>ค่าไฟ (หน่วย):</td><td><input type="text" id="nrg" name="nrg" pattern="[0-9]+([,\.][0-9]+)?"><br></td>
+        </tr>
+        <tr>
+            <td>ค่าไฟต่อหน่วย (บาท):</td><td><input type="text" id="nrg_price" name="nrg_price" pattern="[0-9]+([,\.][0-9]+)?" value="3.90"><br></td>
+        </tr>
+        <tr>
+            <td>ค่าน้ำ (หน่วย):</td><td><input type="text" id="water" name="water" pattern="[0-9]+([,\.][0-9]+)?"><br></td>
+        </tr>
+        <tr>
+            <td>ค่าน้ำต่อหน่วย (บาท):</td><td><input type="text" id="water_price" name="water_price" pattern="[0-9]+([,\.][0-9]+)?" value="7.00"><br></td>
+        </tr>
+        <tr>
+            <td>ค่าหอพัก (บาท):</td><td><input type="text" id="price" name="price" value="0" pattern="[0-9]+([,\.][0-9]+)?"><br></td>
+        </tr>
+        <tr>
+            <td></td><td><input type="submit" value="บันทึกข้อมูล"></td>
+        </tr>
+    </table>
+</form>
+<p align="center">ค่าหอพัก ถ้าไม่มี หรือเป็นรายเทอม ให้ใส่ศูนย์ (0)</p>
+<div style="text-align:center;">
+    <button class="button button-red" onclick="back()">ย้อนกลับ</button></p>
+</div>
+<script>
+warning = '\n\nระวัง! คุณไม่สามารถย้อนกลับการกระทำนี้ได้!\n\n';
+urlParams = new URLSearchParams(window.location.search)
+//pull parameters
+if(urlParams.get('id')!=null){
+    document.getElementById('title').innerHTML = "สร้างบิลสำหรับ "+urlParams.get('id')
+    document.getElementById('id').value = urlParams.get('id')
+}
+function back(){
+    if(urlParams.get('id')!=null){
+        window.open('bill_room.php?id='+urlParams.get('id'),'_self')
+    }
+    else{
+        window.open('bill_list.php','_self')
+    }
+}
+</script>
+<!--auth.js-->
+<p id="page" type="admin"></p>
+<script src="scr_auth.js"></script>
+<!--auth.js-->
+</body>
+</html>

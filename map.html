@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แผนที่หอพัก</title>
+</head>
+<body>
+    <link rel="stylesheet" href="body.css">
+    <link rel="stylesheet" href="bodyhome.css">
+    <!--navbar-->
+    <script src="include-html.js"></script>
+    <script src="navbar.js""></script>
+    <p include-html="navbar.html"></p>
+    <script>includeHTML();</script>
+    <!--navbar-->
+    <!-- Simulate a smartphone / tablet -->
+    <div class="mobile-container">
+        <div style="padding:16px">
+    <!-- END -->
+
+    <!--header-->
+    <img src="header_map.png" style="width:100%">
+    <!-- END -->
+        
+    
+    <!-- แผนที่ -->
+    <div align="center">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1347.6598017970196!2d104.10070216954938!3d17.182001731707302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313c8d5867cce67d%3A0xa7bd8501d7173915!2z4Lir4Lit4Lie4Lix4LiB4LiE4Liz4Lin4Lix4LiZ!5e0!3m2!1sth!2sth!4v1587390697968!5m2!1sth!2sth" width="366" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+    <!-- END -->
+
+    <!-- ย้อนกลับ Button -->
+    <div class="pricing-block-button">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <div class="w3-container">
+                <p><button class="w3-button w3-green w3-round" onclick="link('index.html')">ย้อนกลับ</button></p><!--ใส่ลิ้งตรงนี้-->
+            </div> 
+    </div>
+    <!-- END -->
+
+    <!-- footer -->
+    <footer>
+        <p align ="center" style="font-size: medium" >copyright ©2020 Keng Kajorn</p>
+    </footer>
+    <!-- END -->
+<script>
+function link(url){
+    window.open(url,'_self')
+}
+</script>
+</body>
+</html>

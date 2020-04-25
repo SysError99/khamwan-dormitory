@@ -1,0 +1,50 @@
+<html>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title>ระบบจัดการห้องพัก</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="body.css">
+<!--navbar-->
+<script src="include-html.js"></script>
+<script src="navbar.js""></script>
+<p include-html="navbar.html"></p>
+<script>includeHTML();</script>
+<!--navbar-->
+<div class="header"><h1>รายงานปัญหาหอพัก</h1></div>
+<form action="scr_report.php?add" id="form_report" name="form_report" method="post" enctype="multipart/form-data">
+    <table align="center">
+        <tr>
+            <td>หมายเลขห้อง: </td><td><input type="text" id="room" name="room"></td>
+        </tr>
+        <tr>
+            <td>รายละะเอียดของปัญหา</td>
+            <td><textarea class="text" style="width:100%;height:256px;" name="detail" form="form_report"></textarea></td>
+        </tr>
+        <tr>
+            <td>อัปโหลดไฟล์รูปภาพ</td><td><input type="file" id="photo" name="photo"></td>
+        </tr>
+        <tr><td> </td><td> </td></tr>
+        <tr>
+            <td></td><td><input type="submit" value="รายงานปัญหา"></td>
+        </tr>
+    </table>
+</form>
+<div style="text-align:center;">
+    <button class="button button-red" onclick="gotolink('room_ui.php')">ย้อนกลับ</button></p>
+</div>
+<script>
+urlParams = new URLSearchParams(window.location.search)
+if(urlParams.get('room')!=null){
+    document.getElementById('room').value = urlParams.get('room')
+}
+function gotolink(link){
+    window.open(link,'_self')
+}
+</script>
+<!--auth.js-->
+<p id="page" type="room"></p>
+<script src="scr_auth.js"></script>
+<!--auth.js-->
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title>ระบบจัดการหอพัก</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="body.css">
+<!--navbar-->
+<script src="include-html.js"></script>
+<script src="navbar.js""></script>
+<p include-html="navbar.html"></p>
+<script>includeHTML();</script>
+<!--navbar-->
+<img src="header_owner.png" style="width:100%">
+<div style="text-align:center;">
+    <h>- เมนูการทำงาน -</h>
+    <p><button class="button" onclick="gotolink('reserve_list.php')"> รายการจองห้องพัก </button>
+    <p><button class="button" onclick="gotolink('room_list.php')">จัดการห้องพักทั้งหมด</button></p>
+    <p><button class="button" onclick="gotolink('bill_list.php')">ระบบออกบิล</button></p>
+    <p><button class="button" onclick="gotolink('report_list.php')">รายการปัญหาภายในหอพัก</button></p>
+    <h>- เมนูตั้งค่า -</h>
+    <p><button class="button button-blue" onclick="gotolink('server.php')">ตั้งค่าข้อมูลหอพัก</button></p>
+    <h>- เมนูล็อกอิน -</h>
+    <p><button class="button button-red" onclick="gotolink('scr_auth.php?logout')">ออกจากระบบ</button></p>
+</div>
+<script>
+function gotolink(link){
+    window.open(link,'_self');
+}
+</script>
+<!--auth.js-->
+<p id="page" type="admin"></p>
+<script src="scr_auth.js"></script>
+<!--auth.js-->
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* variables */
+
+/*reset*/
+
+/*base styles*/
+html {
+	font-size: 62.5%;
+}
+body {
+	font-size: 1.5em;
+	line-height: 1.6;
+	font-weight: 400;
+	font-family: 'THSarabunNew';
+	color: #222;
+}
+
+/*fonts*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300");
+@import url(fonts/thsarabunnew.css);
+
+/* Typography
+********************************************************************* */
+h1, h2, h3, h4, h5, h6 ,p{
+	margin-top: 0;
+	margin-bottom: 2rem;
+    font-weight: 300;
+    text-align: center;
+}
+h1 {
+	font-size: 4.0rem;
+	line-height: 1.2;
+	letter-spacing: -.1rem;
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+h1 {
+	font-size: 5.0rem;
+}
+
+}
+p {
+	margin-top: 0;
+}
+
+/* Links
+********************************************************************* */
+a {
+	color: rgb(0, 0, 0);
+}
+a:hover {
+	color: #0FA0CE;
+}
+
+
+.mobile-toggle {
+	display: none;
+	cursor: pointer;
+	font-size: 20px;
+	position: absolute;
+	right: 22px;
+	top: 0;
+	width: 30px;
+}
+
+
+/*เพิ่มมาใหม่*/
+/* body Section
+********************************************************************* */
+body {
+	font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .mobile-container {
+	max-width: 480px;
+	margin: auto;
+	background-color: rgb(235, 235, 235);
+	
+	color: rgb(0, 0, 0);
+	border-radius: 20px;
+  }
+  
+  

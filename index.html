@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หอพักคำวัน</title>
+    
+</head>
+<body>
+    <link rel="stylesheet" href="body.css">
+    <link rel="stylesheet" href="bodyhome.css">
+    <!--navbar-->
+    <script src="include-html.js"></script>
+    <script src="navbar.js""></script>
+    <p include-html="navbar.html"></p>
+    <script>includeHTML();</script>
+    <!--navbar-->
+    <!-- Simulate a smartphone / tablet -->
+    <div class="mobile-container">
+        <div style="padding:16px">
+    <!--END-->
+
+    <!--Header-->
+    <div class="header">
+        <h3 align ="center">หอพักคำวัน</h3>
+    </div>
+    <!--END-->
+
+    <!--ภาพหน้าปก-->
+        <div align ="center">
+            <img src="logo3.png" style="width:100%"  alt="logo ">
+        </div>
+    
+        <!---ข้อมูล-->
+        <div class="container">
+            <div class="contentbox">
+                <h3 class="heading">หอพักคำวัน</h3>
+                <p>#รอใส่ข้อมูลเพิ่มเติม</p>
+                <h3 class="heading">ข้อมูลข่าวสาร</h3>
+                <p>#รอใส่ข้อมูลเพิ่มเติม</p>
+            </div>
+        </div>
+    <!--END-->
+        
+            
+    <!--Button-->
+    <div class="container">
+        <div class="contentbox">
+            <p style="text-align:center;">- เมนูทำงาน -</p>
+            <button class="button" onclick="link('images.html')">ภาพหอพัก</button></p>  <!--แก้ -->
+            <button class="button" onclick="link('map.html')">แผนที่</button></p>  <!--แก้ -->
+            <button class="button" onclick="link('reserve.php')">จองห้องพัก</button></p>  <!--แก้ -->
+            <button class="button" onclick="link('login.html')">เข้าสู่ระบบ</button></p>  <!--แก้ -->
+            <button class="button button-red" onclick="link('scr_auth.php')">ร้องเรียน</button></p>  <!--แก้ -->
+            <button class="button button" onclick="link('contact.php')">ติดต่อเรา</button></p>  <!--แก้ -->
+        </div>
+    </div>
+    <!--END-->
+        
+    <!-- footer -->
+    <footer>
+         <p align ="center" style="font-size: medium" >copyright ©2020 Keng Kajorn</p>
+    </footer> 
+    <!--END--> 
+<script>
+function link(url){
+    window.open(url,'_self')
+}
+</script>
+</body>
+</html>
